@@ -72,7 +72,7 @@
 ```
 ---
 ### Docker Compose部署
-#### 快速部署/面板管理脚本
+#### 快速部署|面板管理脚本
 
 ```bash
 curl -L https://raw.githubusercontent.com/loadinghtml/flux-panel/refs/heads/main/panel_install.sh -o panel_install.sh && chmod +x panel_install.sh && ./panel_install.sh
