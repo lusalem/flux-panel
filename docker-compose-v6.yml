@@ -10,7 +10,6 @@ services:
       MARIADB_DATABASE: ${DB_NAME}
       MARIADB_USER: ${DB_USER}
       MARIADB_PASSWORD: ${DB_PASSWORD}
-      MARIADB_RANDOM_ROOT_PASSWORD: "no"  # 避免生成随机root密码
       TZ: Asia/Shanghai
     volumes:
       - mariadb_data:/var/lib/mysql
@@ -25,7 +24,7 @@ services:
     networks:
       - gost-network
     healthcheck:
-      test: ["CMD", "mariadb-admin", "ping", "-h", "localhost", "-u", "root", "-p$${MARIADB_ROOT_PASSWORD}"]
+      test: ["CMD", "mariadb-admin", "ping", "-h", "localhost"]
       timeout: 10s
       retries: 10
       start_period: 30s
