@@ -42,7 +42,6 @@ services:
       JWT_SECRET: ${JWT_SECRET}
       LOG_DIR: /app/logs
       JAVA_OPTS: "-Xms256m -Xmx512m -Dfile.encoding=UTF-8 -Duser.timezone=Asia/Shanghai"
-      # 如果是Spring Boot应用，可能需要调整JDBC URL
     ports:
       - "${BACKEND_PORT}:6365"
     volumes:
@@ -60,7 +59,7 @@ services:
       start_period: 90s
 
   frontend:
-    image: salemlu/vite-frontend:latest
+    image: loadinghtml/vite-frontend:latest
     container_name: vite-frontend
     restart: unless-stopped
     ports:
