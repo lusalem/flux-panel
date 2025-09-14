@@ -30,7 +30,7 @@ services:
       start_period: 30s
 
   backend:
-    image: salemlu/springboot-backend:latest
+    image: loadinghtml/springboot-backend:latest
     container_name: springboot-backend
     restart: unless-stopped
     environment:
