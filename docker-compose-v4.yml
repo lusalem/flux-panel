@@ -30,7 +30,7 @@ services:
       start_period: 30s
 
   backend:
-    image: loadinghtml/springboot-backend:latest
+    image: salemlu/springboot-backend:latest
     container_name: springboot-backend
     restart: unless-stopped
     environment:
@@ -60,7 +60,7 @@ services:
       start_period: 90s
 
   frontend:
-    image: loadinghtml/vite-frontend:latest
+    image: salemlu/vite-frontend:latest
     container_name: vite-frontend
     restart: unless-stopped
     ports:
