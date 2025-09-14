@@ -10,6 +10,7 @@ services:
       MARIADB_DATABASE: ${DB_NAME}
       MARIADB_USER: ${DB_USER}
       MARIADB_PASSWORD: ${DB_PASSWORD}
+      MARIADB_RANDOM_ROOT_PASSWORD: "no"  # 避免生成随机root密码
       TZ: Asia/Shanghai
     volumes:
       - mariadb_data:/var/lib/mysql
@@ -24,7 +25,7 @@ services:
     networks:
       - gost-network
     healthcheck:
-      test: ["CMD", "mariadb-admin", "ping", "-h", "localhost"]
+      test: ["CMD", "mariadb-admin", "ping", "-h", "localhost", "-u", "root", "-p$${MARIADB_ROOT_PASSWORD}"]
       timeout: 10s
       retries: 10
       start_period: 30s
@@ -42,7 +43,6 @@ services:
       LOG_DIR: /app/logs
       JAVA_OPTS: "-Xms256m -Xmx512m -Dfile.encoding=UTF-8 -Duser.timezone=Asia/Shanghai"
       # 如果是Spring Boot应用，可能需要调整JDBC URL
-      # SPRING_DATASOURCE_URL: jdbc:mariadb://mariadb:3306/${DB_NAME}?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     ports:
       - "${BACKEND_PORT}:6365"
     volumes:
