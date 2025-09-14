@@ -75,14 +75,14 @@
 #### 快速部署|面板管理脚本
 
 ```bash
-curl -L https://raw.githubusercontent.com/loadinghtml/flux-panel/refs/heads/main/panel_install.sh -o panel_install.sh && chmod +x panel_install.sh && ./panel_install.sh
+curl -L https://raw.githubusercontent.com/lusalem/flux-panel/refs/heads/main/panel_install.sh -o panel_install.sh && chmod +x panel_install.sh && ./panel_install.sh
 
 ```
 
 #### 节点管理脚本
 
 ```bash
-curl -L https://raw.githubusercontent.com/loadinghtml/flux-panel/refs/heads/main/install.sh -o install.sh && chmod +x install.sh && ./install.sh
+curl -L https://raw.githubusercontent.com/lusalem/flux-panel/refs/heads/main/install.sh -o install.sh && chmod +x install.sh && ./install.sh
 
 ```
 
