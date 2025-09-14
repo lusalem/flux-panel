@@ -85,7 +85,7 @@ jobs:
               --title "GOST Binary Latest" \
               --notes "GOST binary compiled from commit ${{ github.sha }}
           
-          - Platform: Linux AMD64
+          - Platform: Linux AMD64,linux/arm64
           - Compressed with UPX
           - Build date: ${{ github.event.head_commit.timestamp }}" \
               --repo ${{ github.repository }}
@@ -131,9 +131,9 @@ jobs:
         if: steps.vite-changes.outputs.vite == 'true'
         run: |
           docker buildx build \
-            --platform linux/amd64 \
+            --platform linux/amd64,linux/arm64 \
             --push \
-            -t bqlpfy/vite-frontend \
+            -t salemlu/vite-frontend \
             ./vite-frontend
 
   build-java:
@@ -186,7 +186,7 @@ jobs:
         if: steps.java-changes.outputs.java == 'true'
         run: |
           docker buildx build \
-            --platform linux/amd64 \
+            --platform linux/amd64,linux/arm64 \
             --push \
-            -t bqlpfy/springboot-backend \
+            -t salemlu/springboot-backend \
             ./springboot-backend
