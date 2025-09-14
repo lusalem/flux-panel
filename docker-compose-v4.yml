@@ -1,48 +1,54 @@
+version: '3.8'
+
 services:
-  mysql:
-    image: loadinghtml/mysql:latest
-    container_name: gost-mysql
+  mariadb:
+    image: mariadb:10.11  # 推荐使用特定版本而不是latest
+    container_name: gost-mariadb
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      MYSQL_DATABASE: ${DB_NAME}
-      MYSQL_USER: ${DB_USER}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${DB_PASSWORD}
+      MARIADB_DATABASE: ${DB_NAME}
+      MARIADB_USER: ${DB_USER}
+      MARIADB_PASSWORD: ${DB_PASSWORD}
       TZ: Asia/Shanghai
     volumes:
-      - mysql_data:/var/lib/mysql
+      - mariadb_data:/var/lib/mysql
       - ./gost.sql:/docker-entrypoint-initdb.d/init.sql:ro
     command: >
-      --default-authentication-plugin=mysql_native_password
       --character-set-server=utf8mb4
       --collation-server=utf8mb4_unicode_ci
       --max_connections=1000
       --innodb_buffer_pool_size=256M
+      --innodb_log_file_size=128M
+      --max_allowed_packet=64M
     networks:
       - gost-network
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      test: ["CMD", "mariadb-admin", "ping", "-h", "localhost"]
       timeout: 10s
       retries: 10
+      start_period: 30s
 
   backend:
     image: loadinghtml/springboot-backend:latest
     container_name: springboot-backend
     restart: unless-stopped
     environment:
-      DB_HOST: mysql
+      DB_HOST: mariadb  # 注意这里改为mariadb服务名
       DB_NAME: ${DB_NAME}
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
       JWT_SECRET: ${JWT_SECRET}
       LOG_DIR: /app/logs
       JAVA_OPTS: "-Xms256m -Xmx512m -Dfile.encoding=UTF-8 -Duser.timezone=Asia/Shanghai"
+      # 如果是Spring Boot应用，可能需要调整JDBC URL
+      SPRING_DATASOURCE_URL: jdbc:mariadb://mariadb:3306/${DB_NAME}?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     ports:
       - "${BACKEND_PORT}:6365"
     volumes:
       - backend_logs:/app/logs
     depends_on:
-      mysql:
+      mariadb:  # 改为依赖mariadb服务
         condition: service_healthy
     networks:
       - gost-network
@@ -65,20 +71,19 @@ services:
     networks:
       - gost-network
 
-
 volumes:
-  mysql_data:
-    name: mysql_data
+  mariadb_data:  # 改为mariadb_data
+    name: mariadb_data
     driver: local
   backend_logs:
     name: backend_logs
     driver: local
 
-
 networks:
   gost-network:
     name: gost-network
     driver: bridge
+    enable_ipv6: true
     ipam:
       config:
-        - subnet: 172.20.0.0/16 
+        - subnet: 172.20.0.0/16
