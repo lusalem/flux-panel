@@ -119,7 +119,7 @@ curl -L https://raw.githubusercontent.com/lusalem/flux-panel/refs/heads/main/ins
 
 **⭐ 如果这个项目对您有帮助，请给个 Star 支持一下！**
 
-[![Star History Chart](https://api.star-history.com/svg?repos=bqlpfy/flux-panel&type=Date)](https://www.star-history.com/#bqlpfy/flux-panel&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=lusalem/flux-panel&type=Date)](https://www.star-history.com/#lusalem/flux-panel&Date)
 ---
 <!--## ⭐ 喝杯咖啡！->
 
