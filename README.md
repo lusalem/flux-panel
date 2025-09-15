@@ -1,5 +1,6 @@
 # flux-panel转发面板
 <span style="color: red;">支持甲骨文ARM </span>
+<font color=#0099ff size=7 face="黑体"> color=#0099ff size=7 face="黑体" </font>
 
 
 本项目基于 [go-gost/gost](https://github.com/go-gost/gost) 和 [go-gost/x](https://github.com/go-gost/x) 两个开源库，实现了转发面板。
