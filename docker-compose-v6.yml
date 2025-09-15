@@ -41,8 +41,6 @@ services:
       JWT_SECRET: ${JWT_SECRET}
       LOG_DIR: /app/logs
       JAVA_OPTS: "-Xms256m -Xmx512m -Dfile.encoding=UTF-8 -Duser.timezone=Asia/Shanghai"
-      # 如果是Spring Boot应用，可能需要调整JDBC URL
-      SPRING_DATASOURCE_URL: jdbc:mariadb://mariadb:3306/${DB_NAME}?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     ports:
       - "${BACKEND_PORT}:6365"
     volumes:
