@@ -118,7 +118,7 @@ curl -L https://raw.githubusercontent.com/lusalem/flux-panel/refs/heads/main/ins
 请确保在合法、合规、安全的前提下使用本项目。
 
 ---
-<!--## ⭐ 喝杯咖啡！-->
+<!--## ⭐ 喝杯咖啡！->
 
 | 网络       | 地址                                                                 |
 |------------|----------------------------------------------------------------------|
@@ -132,5 +132,5 @@ curl -L https://raw.githubusercontent.com/lusalem/flux-panel/refs/heads/main/ins
 
 **⭐ 如果这个项目对您有帮助，请给个 Star 支持一下！**
 
-[![Star History Chart](https://api.star-history.com/svg?repos=bqlpfy/flux-panel&type=Date)](https://www.star-history.com/#bqlpfy/flux-panel&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=lusalem/flux-panel&type=Date)](https://www.star-history.com/#lusalem/flux-panel&Date)
 
