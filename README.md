@@ -4,7 +4,7 @@
 本项目基于 [go-gost/gost](https://github.com/go-gost/gost) 和 [go-gost/x](https://github.com/go-gost/x) 两个开源库，实现了转发面板。
 ---
 ## 文档地址
-- [文档地址](https://loadinghtml.github.io/flux-panel)
+- [文档地址](https://lusalem.github.io/flux-panel)
 ---
 ## 特性
 
@@ -118,7 +118,7 @@ curl -L https://raw.githubusercontent.com/lusalem/flux-panel/refs/heads/main/ins
 请确保在合法、合规、安全的前提下使用本项目。
 
 ---
-## ⭐ 喝杯咖啡！
+<!--## ⭐ 喝杯咖啡！-->
 
 | 网络       | 地址                                                                 |
 |------------|----------------------------------------------------------------------|
