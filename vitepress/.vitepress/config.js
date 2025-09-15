@@ -16,8 +16,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/bqlpfy/flux-panel' },
-      { icon: 'telegram', link: 'https://t.me/+wdVDni1fdyI0YzE1'}
+      { icon: 'github', link: 'https://github.com/lusalem/flux-panel' }
     ]
   }
 })
