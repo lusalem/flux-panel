@@ -3,7 +3,7 @@
 flux-panel是一个基于 go-gost 的现代化转发面板，提供了直观的 Web 界面来管理网络流量转发。
 
 ::: tip 需要帮助？
-📱 [加入 Telegram 群组](https://t.me/+wdVDni1fdyI0YzE1) | 🐛 [GitHub Issues](https://github.com/bqlpfy/flux-panel/issues) | 🤝 [参与贡献](https://github.com/bqlpfy/flux-panel/pulls)
+📱 [加入 Telegram 群组](https://t.me/+wdVDni1fdyI0YzE1) | 🤝 [参与贡献](https://github.com/bqlpfy/flux-panel/pulls)
 :::
 
 ## 项目介绍
@@ -97,7 +97,7 @@ curl -L https://your-panel-server:6365/agent/install | bash -s -- --server=your-
 ```
 
 ::: warning 安装须知
-- 安装或者更新时如果 `/etc/gost/` 下存在 `gost.json`，安装命令会跳过生成，使用当前存在的配置
+- 安装或者更新时如果 `/opt/gost/` 下存在 `gost.json`，安装命令会跳过生成，使用当前存在的配置
 - gost执行文件会强制更新
 :::
 
@@ -281,22 +281,9 @@ http(s)://<面板连接地址>/api/v1/open_api/sub_store?user=<用户名>&pwd=<�
    - 实时讨论，快速回复
    - 与其他用户交流经验
 
-2. **🐛 GitHub Issues**
-   - [报告问题](https://github.com/bqlpfy/flux-panel/issues/new)
-   - 查看 [已知问题](https://github.com/bqlpfy/flux-panel/issues)
-   - 提交功能建议
-
-3. **📖 文档资源**
+2. **📖 文档资源**
    - [快速开始指南](/getting-started)
    - [常见问题解答](/faq)
-
-
-### 联系开发者
-
-对于紧急问题：
-
-- **GitHub**: [@bqlpfy](https://github.com/bqlpfy)
-- **Telegram**: [加入群组](https://t.me/+wdVDni1fdyI0YzE1) 直接联系
 
 ## 免责声明
 
