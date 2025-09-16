@@ -2,8 +2,8 @@
 layout: home
 
 hero:
-  name: "Flux"
-  text: "基于gost的转发面板（原项目已删库并归档）"
+  name: "Flux-原项目已删库并归档"
+  text: "基于gost的转发面板"
   tagline: "功能强大的流量转发管理平台，支持灵活的流量计费和限速功能"
   actions:
     - theme: brand
@@ -63,4 +63,4 @@ features:
 
 ---
 
-**本网站由 [GITHUB](https://github.io/) 提供防御支持** 
+**本网站由 [GITHUB](https://github.io/) 提供支持** 
