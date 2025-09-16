@@ -24,7 +24,7 @@ build_download_url() {
 
 # 下载地址
 DOWNLOAD_URL=$(build_download_url)
-INSTALL_DIR="/etc/gost"
+INSTALL_DIR="/opt/gost"
 COUNTRY=$(curl -s https://ipinfo.io/country)
 if [ "$COUNTRY" = "CN" ]; then
     # 拼接 URL
