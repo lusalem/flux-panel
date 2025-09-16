@@ -55,6 +55,8 @@ jobs:
       # 第5步：设置 Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+            enablement: true
 
       # 第6步：上传构建产物
       - name: Upload artifact
